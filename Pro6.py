@@ -1,3 +1,4 @@
 import calendar
-year = 2024
-print(calendar.month(year))
+year = 2025
+
+print(calendar.month(2025,12))
