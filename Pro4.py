@@ -3,6 +3,7 @@ def show_Balance():
     print("--------------")
     print(f"Your Balance : ${balance:.2f}")
     print("--------------")
+    
 
 def Deposit():
     amount = float(input("Enter the amount to be deposited : "))
