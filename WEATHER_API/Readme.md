@@ -5,8 +5,6 @@ A simple and clean desktop weather application built with **Python** and **PyQt5
 ---
 
 ## 📸 Preview
-
-![Weather App Screenshot](weather_app_screenshot.png)
 <img width="221" height="263" alt="image" src="https://github.com/user-attachments/assets/5157362c-103b-458e-a370-513a022a9649" />
 
 
