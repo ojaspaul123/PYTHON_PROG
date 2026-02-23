@@ -1,0 +1,21 @@
+Sale ID,Date,Customer Name,Turtle Species,Quantity,Unit Price (INR),Total Price (INR),Payment Method,Salesperson,Region,Status
+S001,2026-01-03,Rahul Sharma,Red-Eared Slider,2,2500,5000,Cash,Amit Kumar,Bhubaneswar,Completed
+S002,2026-01-05,Priya Nair,Painted Turtle,1,3200,3200,UPI,Sneha Rao,Delhi,Completed
+S003,2026-01-08,Arjun Mehta,Box Turtle,3,4500,13500,Credit Card,Amit Kumar,Mumbai,Completed
+S004,2026-01-10,Divya Pillai,Russian Tortoise,1,8000,8000,Cash,Riya Patel,Chennai,Completed
+S005,2026-01-14,Suresh Iyer,Map Turtle,2,3800,7600,UPI,Sneha Rao,Bhubaneswar,Completed
+S006,2026-01-17,Anita Joshi,Musk Turtle,1,2800,2800,Debit Card,Amit Kumar,Pune,Completed
+S007,2026-01-20,Vikram Singh,Sulcata Tortoise,1,15000,15000,Bank Transfer,Riya Patel,Delhi,Completed
+S008,2026-01-22,Meena Krishnan,Red-Eared Slider,4,2500,10000,Cash,Sneha Rao,Hyderabad,Completed
+S009,2026-01-25,Rohan Das,Leopard Tortoise,1,12000,12000,Credit Card,Amit Kumar,Kolkata,Completed
+S010,2026-01-28,Kavya Menon,Painted Turtle,2,3200,6400,UPI,Riya Patel,Bhubaneswar,Completed
+S011,2026-02-02,Harish Nair,Box Turtle,1,4500,4500,Cash,Sneha Rao,Mumbai,Completed
+S012,2026-02-05,Sonal Gupta,Musk Turtle,3,2800,8400,Debit Card,Amit Kumar,Delhi,Completed
+S013,2026-02-08,Deepak Verma,Russian Tortoise,2,8000,16000,Bank Transfer,Riya Patel,Pune,Completed
+S014,2026-02-11,Lakshmi Bai,Map Turtle,1,3800,3800,UPI,Sneha Rao,Chennai,Completed
+S015,2026-02-14,Nikhil Reddy,Red-Eared Slider,3,2500,7500,Cash,Amit Kumar,Hyderabad,Completed
+S016,2026-02-17,Pooja Shah,Sulcata Tortoise,1,15000,15000,Credit Card,Riya Patel,Delhi,Completed
+S017,2026-02-19,Arun Pillai,Painted Turtle,2,3200,6400,UPI,Sneha Rao,Bhubaneswar,Completed
+S018,2026-02-21,Neha Kapoor,Box Turtle,1,4500,4500,Cash,Amit Kumar,Mumbai,Pending
+S019,2026-02-22,Rajesh Kumar,Leopard Tortoise,1,12000,12000,Bank Transfer,Riya Patel,Kolkata,Pending
+S020,2026-02-23,Sunita Rao,Musk Turtle,2,2800,5600,Debit Card,Sneha Rao,Pune,Pending
