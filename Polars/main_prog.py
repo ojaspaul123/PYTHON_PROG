@@ -107,25 +107,54 @@ print(high_end.select(["sale_id","customer","species","unit_price","net_total"])
 big_comp = df.filter((pl.col("status") == "Completed") & (pl.col("net_total") > 10000))
 print(big_comp.select(["sale_id","customer","species","net_total","status"]))
 
-top_sp = sp_agg.row(0, named=True)
-best_sp = (
-    comp.group_by("species")
-        .agg(pl.col("qty").sum().alias("units"))
-        .sort("units", descending=True)
-        .row(0, named=True)
+hvc = df.filter(pl.col("net_total") > 10000)
+
+
+## LOGIC FILTERS
+total_rev = completed["net_total"].sum()
+avg_order = completed["net_total"].mean()
+# Revenue by salesperson
+top_sp = completed.group_by("salesperson").agg(pl.col("net_total").sum().alias("Revenue")).sort("Revenue", descending=True).row(0, as_dict=True)
+best_sp = df.group_by("species").agg(pl.col("qty").sum().alias("units")).sort("units", descending=True).row(0, as_dict=True)
+exports = []
+#Revenue by Region
+heading("Revenue by Region")
+region_agg = (
+    completed.group_by("region")
+        .agg([
+            pl.col("net_total").sum().round(2).alias("Revenue"),
+            pl.len().alias("Transactions"),
+            pl.col("net_total").mean().round(2).alias("Avg_Sale"),
+        ])
+        .sort("Revenue", descending=True)
 )
+print(region_agg)
+
+#  Payment Distribution
+pay_agg = (
+    comp.group_by("payment")
+        .agg([
+            pl.len().alias("Count"),
+            pl.col("net_total").sum().round(2).alias("Revenue"),
+        ])
+        .with_columns(
+            (pl.col("Count") / comp.shape[0] * 100).round(1).alias("Share_pct")
+        )
+        .sort("Count", descending=True)
+)
+print(pay_agg)
 
 ##FINAL SUMMARY
 print(f"""
-  Source File                        : {CSV_FILE}
-  Raw Records                        : {df_raw.shape[0]}
+  Source File                        : {sal}
+  Raw Records                        : {sal.shape[0]}
   After Cleaning                     : {df.shape[0]}
   Completed Sales                    : {completed.shape[0]}
   Pending Sales                      : {pending.shape[0]}
   {'─'*52}
   Total Revenue (Completed)          : INR {total_rev:,.2f}
   Avg Order Value                    : INR {avg_order:,.2f}
-  Total Discount Given               : INR {comp['discount_amt'].sum():,.2f}
+  Total Discount Given               : INR {completed['discount_amt'].sum():,.2f}
   {'─'*52}
   Top Salesperson                    : {top_sp['salesperson']} (INR {top_sp['Revenue']:,.2f})
   Best-Selling Species               : {best_sp['species']} ({best_sp['units']} units)
